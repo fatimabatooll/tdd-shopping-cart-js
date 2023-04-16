@@ -40,6 +40,17 @@ describe('Cart', () => {
     });
   });
 
+  test('returns array of itemized cart items', () => {
+      const item1 = new Item('Handbag', 500, false);
+      const item2 = new Item('Watch', 40000, true);
+    
+      cart.addItem(item1, 1);
+      cart.addItem(item2, 2);
+    
+      expect(cart.itemizedList()).toEqual(['Handbag x1 - $500', 'Watch x2 - $80,000']);
+    });
+
+ 
 
 
     

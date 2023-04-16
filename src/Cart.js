@@ -17,13 +17,15 @@ class Cart {
 
     this.totalPrice += item.price * quantity;
   }
+  
+    
+  
     itemQuantities() {
       return this.items.map(
         (cartItem) => `${cartItem.item.name} - x${cartItem.quantity}`
       );
     }
-      
-  
+    
   }
 
   module.exports = { Cart };
