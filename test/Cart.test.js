@@ -1,13 +1,37 @@
-const Cart = require('../src/Cart.js');
-const expect = require('chai').expect;
+const { Cart } = require("../src/Cart");
+const Item = require("../src/Item");
+
+
 
 describe('Cart', () => {
-  test ('should initialize as empty', () => {
-      // Set
-      const cart = new Cart()
+  let cart;
 
-      // Execute and Assert
-      expect(cart.items).to.deep.equal([])
-      expect(cart.totalPrice).to.be.equal(0)
-  })
-})
+  beforeEach(() => {
+    cart = new Cart();
+  });
+
+  test('initializes with empty items and total price 0', () => {
+    expect(cart.items).toEqual([]);
+    expect(cart.totalPrice).toEqual(0);
+  });
+
+  describe('#addItem', () => {
+    const item1 = new Item('Handbag', 500, false);
+    const item2 = new Item('Watch', 40000, true);
+
+    test('adds item to cart', () => {
+      cart.addItem(item1, 1);
+
+      expect(cart.items).toEqual([{ item: item1, quantity: 1 }]);
+      expect(cart.totalPrice).toEqual(item1.price);
+    });
+
+    
+  });
+
+
+
+
+    
+});
+

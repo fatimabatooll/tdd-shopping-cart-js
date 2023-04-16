@@ -1,7 +1,12 @@
-module.exports = class Cart {
+class Cart {
   constructor() {
-    this.items = [];
     this.totalPrice = 0;
+    this.items = [];
   }
+
+  
 }
+
+module.exports = { Cart };
+
 
