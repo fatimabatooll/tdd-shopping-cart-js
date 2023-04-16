@@ -25,6 +25,16 @@ class Cart {
         (cartItem) => `${cartItem.item.name} - x${cartItem.quantity}`
       );
     }
+  
+    itemizedList() {
+        return this.items.map(
+          (cartItem) =>
+            `${cartItem.item.name} x${cartItem.quantity} - $${(
+              cartItem.item.price * cartItem.quantity
+            ).toLocaleString('en-US', { maximumFractionDigits: 2, useGrouping: true })}`
+        );
+      }
+  
     
   }
 
