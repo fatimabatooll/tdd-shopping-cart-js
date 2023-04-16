@@ -18,6 +18,7 @@ class Cart {
     this.totalPrice += item.price * quantity;
   }
 
+  
 
 
 }

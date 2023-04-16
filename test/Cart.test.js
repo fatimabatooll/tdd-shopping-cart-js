@@ -26,9 +26,19 @@ describe('Cart', () => {
       expect(cart.totalPrice).toEqual(item1.price);
     });
 
-    
   });
 
+  describe('#itemQuantities', () => {
+    const item1 = new Item('Handbag', 500, false);
+    const item2 = new Item('Watch', 40000, true);
+
+    test('returns array of item quantities', () => {
+      cart.addItem(item1, 2);
+      cart.addItem(item2, 3);
+
+      expect(cart.itemQuantities()).toEqual(['Handbag - x2', 'Watch - x3']);
+    });
+  });
 
 
 
